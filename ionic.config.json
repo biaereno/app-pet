@@ -1,0 +1,7 @@
+{
+  "name": "appPet",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

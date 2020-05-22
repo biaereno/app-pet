@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title align="center">Buscar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="queryText" (ionInput)="filterItem($event)" placeholder="Digite um nome"></ion-searchbar>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+  <ion-list #mylist>
+
+    <ion-item-sliding *ngFor="let item of items">
+
+        <ion-item>
+          <ion-avatar class="item-avatar" slot="end">
+            <img [src]="item.picture">
+          </ion-avatar>
+          <ion-label>
+
+
+            <h2>Nome: {{ item.name }}</h2>
+            <ion-text>
+              <p>Idade: {{ item.age }}</p>
+              <p>Tipo: {{ item.kind }}</p>
+              <p>Sexo: {{ item.gender }}</p>
+              <p>Contato para adoção: {{ item.contact }}</p>
+            </ion-text>
+            <p>{{  item.modified | date: 'dd/MM/yyyy H:mm' }}</p>
+
+          </ion-label>
+        </ion-item>
+      
+    </ion-item-sliding>
+
+  </ion-list>
+
+</ion-content>

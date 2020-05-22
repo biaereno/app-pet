@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title align="center">Cadastrar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-item>
+    <ion-label position="fixed">Nome</ion-label>
+    <ion-input [(ngModel)]="newItem.name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="fixed">Idade</ion-label>
+    <ion-input [(ngModel)]="newItem.age"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Tipo</ion-label>
+    <ion-select placeholder="Selecione" [(ngModel)]="newItem.kind">
+      <ion-select-option value="Cachorro">Cachorro</ion-select-option>
+      <ion-select-option value="Gato">Gato</ion-select-option>
+      <ion-select-option value="Peixe">Peixe</ion-select-option>
+      <ion-select-option value="Tartaruga">Tartaruga</ion-select-option>
+      <ion-select-option value="Pássaro">Pássaro</ion-select-option>
+      <ion-select-option value="Outros">Outros</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Sexo</ion-label>
+    <ion-select placeholder="Selecione" [(ngModel)]="newItem.gender">
+      <ion-select-option value="Fêmea">Fêmea</ion-select-option>
+      <ion-select-option value="Macho">Macho</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="fixed">Contato</ion-label>
+    <ion-input [(ngModel)]="newItem.contact"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="fixed">Foto</ion-label>
+    <ion-input [(ngModel)]="newItem.picture"></ion-input>
+  </ion-item>
+
+  <ion-button color="tertiary" expand="full" (click)="addItem()">Cadastrar Pet!</ion-button>
+
+</ion-content>
